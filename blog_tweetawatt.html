@@ -117,7 +117,7 @@
 									<p>For more information on the materials, visit the <a href="intro.html">Resources page</a></p>
 
 								<h3 style="margin-left:2em">Start</h3>
-									<p><small>For this section, you can reference to <a href="https://learn.adafruit.com/tweet-a-watt/make-it-transmitter">transmitter</a> section of the Adafruit tutorial</small><br>
+									<p><small>For this section, you can reference with <a href="https://learn.adafruit.com/tweet-a-watt/make-it-transmitter">transmitter</a> section of the Adafruit tutorial</small><br>
 									For now you can skip through the X-bee part, till when it open the the case.
 									There wont be too much difference for the beginning steps,
 									you want to open the casing for Kill-a-Watt by unscrewing the 3 screws on the back.
@@ -141,12 +141,12 @@
 									<img src="images/blog/killawatt/build_02.jpg" alt="remove LCD from board" style="max-height: 250px; margin-right:50px;">
 									<img src="images/blog/killawatt/LM2902.jpg" alt="LM2902N Pin layout" style="max-height: 250px;">
 									<p>
-										The next step is to solder the power(red), ground(black), amp singnal(yellow) and voltage singnal(orange on adafruit, green here) from the op-amp.
+										The next step is to solder the power(red), ground(black), amp signal(yellow) and voltage signal(orange on adafruit, green here) from the op-amp.
 									</p>
 									<img src="images/blog/killawatt/build_03.jpg" alt="soldering on LM2902N" style="max-height: 250px;">
 									<p>
 										I cut off some plastics to get some clearance for the wires, and drilled a hole for them to come out for some tests,
-										since I wasn't about to plug this in to 110VAC outlet without the case, and you shouldn't either!!!
+										since I wasn't about to plug this in to 120VAC outlet without the case, and you shouldn't either!!!
 									</p>
 									<img src="images/blog/killawatt/build_04.jpg" alt="cutting the case for clearance" style="max-height: 250px;">
 									<p>
@@ -165,31 +165,71 @@
 										lets test the voltage from power(red) to ground(black). Its reading just a bit above 6 V.
 									</p>
 									<img src="images/blog/killawatt/build_07.jpg" alt="cutting the case for clearance" style="max-height: 250px;">
+									<p></p>
 
 									<h3 style="margin-left:2em">Test</h3>
+									<p>
+										<small>For this section, refer to <a href="https://learn.adafruit.com/tweet-a-watt/make-it-software">software</a> section of Tweet-a-Watt.</small>
+									</p>
+									<p>
+										<small>
+											Note: When you are testing the readings, should use a high wattage device appliance,
+											ie, an incandescent light builb, blow dryer, heating fan, etc. Anything with a heating coil is a great choise.
+										</small>
+									</p>
+									<p>
+										To test if i got some decent reading, i started connecting to an osiliscope.
+									</p>
+									<img src="images/blog/killawatt/build_08.jpg" alt="voltage reading on osiliscope" style="max-height: 250px; margin-right:50px;">
 
+									<img src="images/blog/killawatt/build_09.jpg" alt="current reading on osiliscope" style="max-height: 250px;">
+									<p>
+										<small>
+											Note: Wall power AC voltage commonly known to be ±120VAC(in the United State); however, that is refering as <a href="https://en.wikipedia.org/wiki/Root_mean_square#Average_electrical_power">'RMS'</a> value.
+											actual peak to peak are ±170VDC.
+										</small>
+									</p>
+									<p>
+										The next step is to plug the data into a micro controller. And you can start to plot out the voltage and current readings.
+									</p>
+									<img src="images/blog/killawatt/build_10.jpg" alt="arduino plotting voltage and current" style="max-height: 250px;max-width: 100%; object-fit: cover;">
+									<p>
+										<small>
+											Note: If you were using osiliscope in the earlier step, you <b>MUST</b> disconnect the wires from the osiliscope when you are getting readings with an Arduino.
+											otherwise you will be reading the noise from osiliscope.
+										</small>
+									</p>
+									<p>
+										Since we want to calculate the wattage use(1W = 1J/s), it is important to know the <a href="#">sample rate</a> of the micro-controller.
+										Right here we are doing once every milli-second. Knowing that the frequency of AC is 60 Hz, a complete cylce will take 1/60s, which is about 16.67s
+										so we can know that 17 samples will give us a little more than 1 cycle.
+									</p>
+									<p>
+										<small>
+											Note: you can't guarantee that the samples line up every cycles, but we only need it for the timeslices to do the calculation.
+										</small>
+									</p>
+									<img src="images/blog/killawatt/build_11.jpg" alt="sample rate demo" style="max-height: 250px;max-width: 100%; object-fit: cover;">
 
 									<p>
-
+										
 									</p>
 
 									<!-- <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a> -->
 
-</div>
-	</div>
-		</div>
-</div>
-								<div class="sub-menu" style="width:100px; height:100px">
+
+
+
+								<!-- <div class="sub-menu" style="width:100px; height:100px">
 									<div style="width:100%;height:100%;background-color:steelblue;">
 										<p>zzz</p>
-
-
-
-
-
 									</div>
+								</div> -->
 
+								</div>
+							</div>
 						</div>
+					</div>
 				</div>
 			</div>
 		</div>
