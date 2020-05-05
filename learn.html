@@ -7,7 +7,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Marble &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+	<title>DIY Energy &mdash; 2020 ITP Thesis by Sid Chou</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
 	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
@@ -67,24 +67,23 @@
 		<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle"><i></i></a>
 		<aside id="fh5co-aside" role="complementary" class="border js-fullheight">
 
-			<h1 id="fh5co-logo"><a href="index.html">Marble</a></h1>
+			<h1 id="fh5co-logo"><a href="index.html">DIY Energy</a></h1>
 			<nav id="fh5co-main-menu" role="navigation">
 				<ul>
 					<li><a href="index.html">Home</a></li>
-					<li><a href="intro.html">Intro</a></li>
+					<li><a href="resources.html">Resources</a></li>
 					<li class="fh5co-active"><a href="learn.html">Learn</a></li>
-					<li><a href="about.html">About</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="https://www.sidchou.net/">Contact</a></li>
 				</ul>
 			</nav>
 
 			<div class="fh5co-footer">
-				<p><small>&copy; 2016 Blend Free HTML5. All Rights Reserved.</span> <span>Designed by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> </span> <span>Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></span></small></p>
+				<p><small>2020 ITP Thesis project</span> <span>Created by <a href="http://www.sidchou.net/">Sid Chou</a> </span> <span>Template reference: <a href="https://freehtml5.co/" target="_blank">FreeHTML5.co</a></span></small></p>
 				<ul>
-					<li><a href="#"><i class="icon-facebook2"></i></a></li>
-					<li><a href="#"><i class="icon-twitter2"></i></a></li>
-					<li><a href="#"><i class="icon-instagram"></i></a></li>
-					<li><a href="#"><i class="icon-linkedin2"></i></a></li>
+					<!-- <li><a href="#"><i class="icon-facebook2"></i></a></li> -->
+					<!-- <li><a href="#"><i class="icon-twitter2"></i></a></li> -->
+					<li><a href="https://www.instagram.com/sidchou/"><i class="icon-instagram"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/sidchou/"><i class="icon-linkedin2"></i></a></li>
 				</ul>
 			</div>
 
@@ -100,17 +99,58 @@
 							<div class="blog-entry">
 								<!-- <a href="#" class="blog-img"><img src="images/img-1.jpg" class="img-responsive" alt="Free HTML5 Bootstrap Template by FreeHTML5.co"></a> -->
 								<div class="desc">
-									<h2>Comparason</h2>
+									<h2>comparison</h2>
 									<span><small>by Sid Chou </small> / <small> <i class="icon-comment"></i> 05.01.2020</small></span>
 									<p><small>There are many energy monitor tools being developed, here are a list of some.</small></p>
 
 									<table style="width:100%">
 									  <tr>
 									    <th class = "type">Type</th>
-											<th class = "cat">Catagories</th>
+											<th class = "cat">Categories</th>
 									    <th class = "pros">Best Use Cases</th>
 									    <th class = "cons">Lessons to Learn</th>
 									  </tr>
+
+										<tr>
+											<td class = "type">
+												<img src="images/learn/lable.jpg" alt="lable on weller headgun">
+											</br>
+												Reading label
+											</td>
+											<td><small>
+												#outOfTheBox
+												#lowtech
+											</small></td>
+											<td>
+												<li>almost no setup time</li>
+												<li>quick but not accurate estimation</li>
+												<li>lose accurate with complexity of appliances</li>
+											</td>
+											<td>
+												<li>get a general idea of how much power each device use</li>
+												<li>oppertunity to build a timer of checking "device on" time</li>
+											</td>
+										</tr>
+
+										<tr>
+											<td class = "type">
+												<img src="images/learn/coned.jpg" alt="coned">
+											</br>
+												energy provider API
+											</td>
+											<td><small>
+												#API
+											</small></td>
+											<td>
+												<li>coned provide API for </li>
+												<li>quick but not accurate estimation</li>
+												<li>lose accurate with complexity of appliances</li>
+											</td>
+											<td>
+												<li>get a general idea of how much power each device use</li>
+												<li>oppertunity to build a timer of checking "device on" time</li>
+											</td>
+										</tr>
 
 										<tr>
 											<td class = "type">
@@ -127,14 +167,87 @@
 												<li>some models has iot capability, user can view data from their smart phone on web interface</li>
 											</td>
 											<td>
-												<li></li>
-												<li></li>
+												<li>get a better idea of how much power each device use, some only provide over time</li>
+												<li>use api to build web or physical interface</li>
 											</td>
 										</tr>
 
+										<tr>
+									    <td class = "type">
+												<a href="https://iotawatt.com">
+													<img src="images/learn/iotawatt.jpg" alt="tweet-a-watt, image reference:adafruit.com">
+													</br>
+													IoTaWatt project
+												</a>
+											</td>
+									    <td><small>
+												#readymade
+												#packaged
+												#opensource
+											</small></td>
+											<td>
+												<li>IoTaWatt provide different packages for users to set up their own use</li>
+												<li>clear <a href="https://docs.iotawatt.com/en/master/index.html">documentation</a> for setting up</li>
+												<li>controller(ESP8266) runs on private local network(no data privacy concern)</li>
+												<li>reliable data, accessable from browser dashboard</li>
+												<li>built tool for creating graphs and visualizations</li>
+											</td>
+									    <td>
+												<li>availabe query api for historical data</li>
+												<li>opensource material availabe on <a href="https://github.com/boblemaire/IoTaWatt">github</a> </li>
+
+											</td>
+									  </tr>
+
+										<tr>
+											<td class = "type">
+												<a href="blog_tweetawatt.html">
+													<img src="images/learn/tweetawatt.jpg" alt="tweet-a-watt, image reference:adafruit.com">
+													</br>
+													tweet-a-watt project
+												</a>
+											</td>
+											<td><small>
+												#hacking
+												#readymade
+												#opensource
+											</small></td>
+											<td>
+												<li>hacking a product so half of work is already done for us</li>
+												<li>stable, less noisy data from the intustry built circuitry</li>
+												<li>off the shelf well insulated box so risk is minimized</li>
+											</td>
+											<td>
+												<li>finding important elements by reading a PCB board</li>
+												<li>hacking a pcb board by soldering additional wire to hijacking the signal</li>
+												<li>calibrating data</li>
+											</td>
+										</tr>
+
+										<tr>
+									    <td class = "type">
+												<img src="images/learn/acs712t.jpg" alt="acs712t break-out board, image reference:amazon.com">
+											</br>
+												acs712t break-out board
+											</td>
+									    <td><small>
+												#breakoutboard
+												#component
+												#megnaticfield
+											</small></td>
+											<td>
+												<li>break out board ready for connecting to micro-controllers</li>
+												<li>simple 3 pin layout</li>
+											</td>
+									    <td>
+												<li>have to connect AC cables(danger!)</li>
+												<li>neet to build a secure enclosure</li>
+											</td>
+									  </tr>
+
 									  <tr>
 									    <td class = "type">
-												<img src="images/img-1.jpg" alt="current clamp">
+												<img src="images/learn/ct.jpg" alt="current clamp">
 											</br>
 												Current Clamp
 											</td>
@@ -143,50 +256,16 @@
 												#megnaticfield
 											</small></td>
 											<td>
-												<li></li>
-												<li></li>
+												<li>direct connection to the data, no abstraction</li>
+												<li>real time data</li>
 											</td>
 									    <td>
-												<li></li>
-												<li></li>
-											</td>
-									  </tr>
-
-										<tr>
-									    <td class = "type">
-												<a href="blog_tweetawatt.html">
-													<img src="images/learn/tweetawatt.jpg" alt="tweet-a-watt, image reference:adafruit.com">
-													</br>
-													tweet-a-watt project
-												</a>
-											</td>
-									    <td><small>
-												#hacking
-												#readymade
-												#opensource
-											</small></td>
-											<td>
-												<li></li>
-												<li></li>
-											</td>
-									    <td>
-												<li></li>
-												<li></li>
+												<li>amplifire might be needed depend on the clamps rating</li>
+												<li>need read datasheet to understand the spect of each component</li>
 											</td>
 									  </tr>
 
 
-									  <tr>
-									    <td>0000
-											</td>
-									    <td>
-											</td>
-									    <td>
-											</td>
-									    <td>
-											</td>
-									  </tr>
-									</table>
 
 
 									<!-- <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a> -->
