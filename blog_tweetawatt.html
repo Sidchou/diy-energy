@@ -210,10 +210,56 @@
 										</small>
 									</p>
 									<img src="images/blog/killawatt/build_11.jpg" alt="sample rate demo" style="max-height: 250px;max-width: 100%; object-fit: cover;">
-
 									<p>
+										plotting both votage and current reading, with a appliance plugged in, you get 2 sin wave synced up.
+									</p>
+									<img src="images/blog/killawatt/build_12.jpg" alt="arduino plotting voltage and current synced" style="max-height: 250px;max-width: 100%; object-fit: cover;">
+									<p>
+										<small>
+										Right now, they are just mapped to signal strength in mV, but that does not translate directory the voltage and current draw from the appliance.
+										</small>
+									</p>
+									<h3 style="margin-left:2em">Calibration</h3>
+									<p>
+										Calibration method referencing <a href="https://cdn-learn.adafruit.com/assets/assets/000/010/283/original/wattcher-maingraph.py">python code</a>
+									</p>
+									<p>
+										After getting decent readings and being able to plot it out, now it's time to map them so they are meaningful.
+									</p>
+									<p>
+										<small>
+											Note: this part there are a lot of assumptions made, which you may need to adjust some numbers if you have a meter to verify those assumptions, ie, AC 120V, 60hz, etc.
+										</small>
+									</p>
+									<p>
+										For the voltage reading calibration, as earlier mentioned 120VAC is "RMS", therefore we should map the peak to peak reading to ±170V, so you want to take the range(max-min) and zero/bias((max+min)/2).
+										Then reading can be shift to 0 by subtracting zero and scaled appropriately by devide the range and times VAC range(340V).
+									</p>
+									<img src="images/blog/killawatt/build_13.jpg" alt="voltage calibration" style="max-height: 250px;max-width: 100%;">
+									<p>
+										In terms of current, you also want to some thing similar, shift the zero and rescale it. Since when nothing is plugged in, current readings is a stright line, that should be your zero.
+										After offsetting it, I'm referencing the scale from Adafruit's <a href="https://cdn-learn.adafruit.com/assets/assets/000/010/283/original/wattcher-maingraph.py">python code</a> by deviding 15.5
+										This factor is calculate by the signal from scaled opamp.
+									</p>
+									<img src="images/blog/killawatt/build_14.jpg" alt="current calibration" style="max-height: 250px;max-width: 100%;">
+									<p>
+										Again, test it with appliance.
+									</p>
+									<img src="images/blog/killawatt/build_15.jpg" alt="current calibration" style="max-height: 250px;max-width: 100%;">
+									<p>
+										Right here, I'm testing with a 2.2A heat gun. 2.2A(RMS) = 2.2* √2 ≈ 3.11. So seems pretty good.
+									</p>
+									<p>
+										After calibrating current and voltage readings, you can calculate the power (P = IV) per 1/60s slices.
+									</p>
+									<img src="images/blog/killawatt/build_16.jpg" alt="current calibration" style="max-height: 250px;max-width: 100%;">
+									<p>
+										Now the sensor is calibrated, and you can use the micro-controllet to connect to another device or output, add a display back, send to a database, etc.
 										
 									</p>
+
+
+
 
 									<!-- <a href="#" class="lead">Read More <i class="icon-arrow-right3"></i></a> -->
 
